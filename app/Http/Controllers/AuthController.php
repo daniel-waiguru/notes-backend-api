@@ -28,10 +28,10 @@ class AuthController extends Controller
         $user = User::create($inputs);
 
         if(!is_null($user)) {
-            return response()->json(["error" => false, "message" => "Success! registration completed", "data" => $user]);
+            return response()->json(["error" => false, "status" => "Success! registration completed", "data" => $user]);
         }
         else {
-            return response()->json(["error" => true, "message" => "Registration failed!"]);
+            return response()->json(["error" => true, "status" => "Registration failed!"]);
         }       
     }
 
@@ -42,28 +42,54 @@ class AuthController extends Controller
         ]);
 
         if($validator->fails()) {
-            return response()->json(["validation_errors" => $validator->errors()]);
+            return response()->json([
+                'error' => true,
+                "validation_errors" => $validator->errors()
+                ]);
         }
 
         $user = User::where("email", $request->email)->first();
 
         if(is_null($user)) {
-            return response()->json(["status" => "failed", "message" => "Failed! email not found"]);
+            return response()->json([
+                'error' => true,
+                "status" => "failed", 
+                "message" => "Failed! email not found"
+                ]);
         }
         $token = $user->createToken('token')->plainTextToken;
         if(Auth::attempt(['email' => $request->email, 'password' => $request->password])){
             $user = Auth::user();
-            return response()->json(["status" => "success", "login" => true, "token" => $token, "data" => $user]);
+            return response()->json([
+                'error' => false,
+                "status" => "success",  
+                "token" => $token,
+                "data" => $user]);
         }
         else {
-            return response()->json(["status" => "failed", "success" => false, "message" => "Whoops! invalid password"]);
+            return response()->json([
+                'error' => true,
+                "status" => "failed",  
+                "message" => "Whoops! invalid password"]);
         }
     }
-
+    public function showUser() {
+        $user = Auth::user();
+        if(!is_null($user)){
+            return response()->json([
+                'error' => false,
+                'data' => $user
+            ]);
+        } else {
+            return response()->json([
+                'error' => true,
+                'message' => "Un-authorized user"
+            ]);
+        }
+    }
     public function logout(Request $request)
     {
-        $token = $request->user()->token();
-        $token->revoke();
+        $request->user()->tokens()->delete();
         return response()->json([
             'message' => 'You have been successfully logged out'
         ]);
