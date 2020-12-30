@@ -29,6 +29,12 @@ https://notieserver.herokuapp.com/api/user/login
 
 To login registered a user submit a POST request with email and passoword to the above endpoint
 
+### User logout
+request method POST
+
+https://notieserver.herokuapp.com/api/user/logout
+
+
 #### Create a Note
 To create a note submit a POST request with note title, note_text(description) and Authorization Bearer Token to the follwing endpoint
 
