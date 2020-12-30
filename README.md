@@ -14,7 +14,7 @@ If you find a missing feature or a bug, please feel free to open an issue or pul
 BASE_URL = https://notieserver.herokuapp.com/
 
 ## Headers
-"Content-Type": "application/json" \n
+"Content-Type": "application/json" <br/>
 "Accept": "application/json"
 "Authorization": "your-issued-token"
 
