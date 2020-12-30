@@ -16,7 +16,7 @@ return [
     */
 
     'default' => env('DB_CONNECTION', 'pgsql'),
-
+    $DATABASE_URL=parse_url('postgres://celksonpifthxw:520826a8e87f137a3513888c23d5123e7e84cc08e6df198d5b66d501ca7cd362@ec2-52-2-82-109.compute-1.amazonaws.com:5432/d38vrs2djsp04t'),
     /*
     |--------------------------------------------------------------------------
     | Database Connections
@@ -65,7 +65,7 @@ return [
 
         'pgsql' => [
             'driver' => 'pgsql',
-            'url' => $DATABASE_URL=parse_url('postgres://celksonpifthxw:520826a8e87f137a3513888c23d5123e7e84cc08e6df198d5b66d501ca7cd362@ec2-52-2-82-109.compute-1.amazonaws.com:5432/d38vrs2djsp04t'),
+            #'url' => env(),
             'host' => $DATABASE_URL["host"],
             'port' => $DATABASE_URL["port"],
             'database' => ltrim($DATABASE_URL["path"], "/"),
