@@ -40,5 +40,16 @@ To create a note submit a PUT request with note title, note_text(description) an
 https://notieserver.herokuapp.com/api/note/{id}
 
 #### Get LoggedIn User Notes list
+To get user notes submit a GET request with Authoarization Bearer Token
 
 https://notieserver.herokuapp.com/api/note
+
+#### Get particular Note Details
+To get Note details submit a GET request with note id as query parameter and Authorization Bearer Token
+
+http://notieserver.herokuapp.com/api/note/{id}
+
+#### Delete a Note
+request methhod DELETE
+
+https://notieserver.herokuapp.com/api/note/{id}
