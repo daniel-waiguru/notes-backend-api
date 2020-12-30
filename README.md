@@ -21,3 +21,17 @@ To register a user submit a POST request with name, email and passoword to the a
 https://notieserver.herokuapp.com/api/user/login
 
 To login registered a user submit a POST request with email and passoword to the above endpoint
+
+#### Create a Note
+To create a note submit a POST request with note title, note_text(description) and Authorization Bearer Token to the follwing endpoint
+
+https://notieserver.herokuapp.com/api/note
+
+#### Edit Note
+To create a note submit a PUT request with note title, note_text(description) and Authorization Bearer Token to the follwing endpoint
+
+https://notieserver.herokuapp.com/api/note/{id}
+
+#### Get LoggedIn User Notes list
+
+https://notieserver.herokuapp.com/api/note
