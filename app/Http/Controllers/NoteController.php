@@ -48,6 +48,10 @@ class NoteController extends Controller
                     'data' => []
                 ]);
             }
+        } else {
+            return response()->json([
+                'message' => "Un-authothorized user"
+            ]);
         }
     }
 
@@ -85,6 +89,10 @@ class NoteController extends Controller
                 ]);
             }
             
+        } else {
+            return response()->json([
+                'message' => "Un-authothorized user"
+            ]);
         }
     }
 
