@@ -56,6 +56,6 @@ To get Note details submit a GET request with note id as query parameter and Aut
 http://notieserver.herokuapp.com/api/note/{id}
 
 #### Delete a Note
-request methhod DELETE
+request method DELETE
 
 https://notieserver.herokuapp.com/api/note/{id}
