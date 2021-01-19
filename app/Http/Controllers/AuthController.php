@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\WelcomeMail;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 
 class AuthController extends Controller
@@ -28,6 +30,7 @@ class AuthController extends Controller
         $user = User::create($inputs);
 
         if(!is_null($user)) {
+            Mail::to($user->email)->send(new WelcomeMail);
             return response()->json(["error" => false, "status" => "Success! registration completed", "data" => $user]);
         }
         else {

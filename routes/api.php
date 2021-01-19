@@ -17,6 +17,10 @@ use Illuminate\Support\Facades\Route;
 */
 Route::post('/user/register', [AuthController::class, 'register']);
 Route::post('/user/login', [AuthController::class, 'login']);
+//Password resets
+Route::post('/user/forgot-password', [AuthController::class, 'sendResetPasswordToken']);
+Route::post('/user/reset-password-token', [AuthController::class, 'verifyToken']);
+Route::post('/user/re-authenticate', [AuthController::class, 'reAuthenticateUser']);
 
 Route::middleware('auth:api')->group(function(){
     Route::resource('/note', NoteController::class);
