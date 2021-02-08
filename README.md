@@ -42,7 +42,11 @@ POST https://notieserver.herokuapp.com/api/user/login
 POST https://notieserver.herokuapp.com/api/user/logout
 Authorization: Bearer YOUR_ISSUED_TOKEN
 ```
-
+### Get User details
+```json
+GET https://notieserver.herokuapp.com/api/user
+Authorization: Bearer YOUR_ISSUED_TOKEN
+```
 ## Notes 
 #### Create a Note
 To create a note submit a POST request with note title, note_text(description) and Authorization Bearer Token to the follwing endpoint
