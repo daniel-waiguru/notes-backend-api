@@ -60,6 +60,7 @@ class AuthController extends Controller
                 "message" => "Failed! email not found"
                 ]);
         }
+        $user->tokens()->delete();
         $token = $user->createToken('token')->plainTextToken;
         if(Auth::attempt(['email' => $request->email, 'password' => $request->password])){
             $user = Auth::user();
