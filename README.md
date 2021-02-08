@@ -9,9 +9,11 @@ Notie Server is a backend REST API build with laravel framework and PostgreSQL d
 BASE_URL = https://notieserver.herokuapp.com/
 
 ## Headers
+```json
 "Content-Type": "application/json" <br/>
 "Accept": "application/json" <br/>
 "Authorization": "your-issued-token"
+```
 
 ## Notie-Server EndPoints
 ### Authentication
