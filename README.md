@@ -20,21 +20,22 @@ BASE_URL = https://notieserver.herokuapp.com/
 
 ## Notie-Server EndPoints
 #### User registration
-https://notieserver.herokuapp.com/api/user/register
-
-To register a user submit a POST request with name, email and passoword to the above endpoint
 ```json
 POST https://notieserver.herokuapp.com/api/user/register
 {
     "name": "Your Name",
     "email": "example@email.com",
-    "password": "your_preffered_password"
-}
+    "password": "your_preferred_password"
+}```
 
 #### User login
-https://notieserver.herokuapp.com/api/user/login
+```json 
+POST https://notieserver.herokuapp.com/api/user/login
+{
+    "email": "your_registered_email@email.com",
+    "password": "your_password"
+}```
 
-To login registered a user submit a POST request with email and passoword to the above endpoint
 
 ### User logout
 request method POST
