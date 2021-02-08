@@ -19,6 +19,7 @@ BASE_URL = https://notieserver.herokuapp.com/
 "Authorization": "your-issued-token"
 
 ## Notie-Server EndPoints
+### Authentication
 #### User registration
 ```json
 POST https://notieserver.herokuapp.com/api/user/register
@@ -44,6 +45,8 @@ POST https://notieserver.herokuapp.com/api/user/login
 POST https://notieserver.herokuapp.com/api/user/logout
 Authorization: Bearer YOUR_ISSUED_TOKEN
 ```
+
+## Notes 
 #### Create a Note
 To create a note submit a POST request with note title, note_text(description) and Authorization Bearer Token to the follwing endpoint
 ```json
