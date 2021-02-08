@@ -16,7 +16,7 @@ return [
     */
 
     'default' => env('DB_CONNECTION', 'pgsql'),
-    $DATABASE_URL=parse_url('postgres://celksonpifthxw:520826a8e87f137a3513888c23d5123e7e84cc08e6df198d5b66d501ca7cd362@ec2-52-2-82-109.compute-1.amazonaws.com:5432/d38vrs2djsp04t'),
+    #$DATABASE_URL=parse_url('postgres://celksonpifthxw:520826a8e87f137a3513888c23d5123e7e84cc08e6df198d5b66d501ca7cd362@ec2-52-2-82-109.compute-1.amazonaws.com:5432/d38vrs2djsp04t'),
     /*
     |--------------------------------------------------------------------------
     | Database Connections
@@ -62,15 +62,30 @@ return [
                 PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
             ]) : [],
         ],
-
+        #Remote DB
+        // 'pgsql' => [
+        //     'driver' => 'pgsql',
+        //     #'url' => env(),
+        //     'host' => $DATABASE_URL["host"],
+        //     'port' => $DATABASE_URL["port"],
+        //     'database' => ltrim($DATABASE_URL["path"], "/"),
+        //     'username' => $DATABASE_URL["user"],
+        //     'password' => $DATABASE_URL["pass"],
+        //     'charset' => 'utf8',
+        //     'prefix' => '',
+        //     'prefix_indexes' => true,
+        //     'schema' => 'public',
+        //     'sslmode' => 'prefer',
+        // ],
+        #Local DB
         'pgsql' => [
             'driver' => 'pgsql',
-            #'url' => env(),
-            'host' => $DATABASE_URL["host"],
-            'port' => $DATABASE_URL["port"],
-            'database' => ltrim($DATABASE_URL["path"], "/"),
-            'username' => $DATABASE_URL["user"],
-            'password' => $DATABASE_URL["pass"],
+            'url' => env('DATABASE_URL'),
+            'host' => env('DB_HOST', '127.0.0.1'),
+            'port' => env('DB_PORT', '5432'),
+            'database' => env('DB_DATABASE', 'forge'),
+            'username' => env('DB_USERNAME', 'forge'),
+            'password' => env('DB_PASSWORD', ''),
             'charset' => 'utf8',
             'prefix' => '',
             'prefix_indexes' => true,

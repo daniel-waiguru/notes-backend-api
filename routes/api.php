@@ -25,4 +25,5 @@ Route::post('/user/re-authenticate', [AuthController::class, 'reAuthenticateUser
 Route::middleware('auth:api')->group(function(){
     Route::resource('/note', NoteController::class);
     Route::post('/user/logout', [AuthController::class, 'logout']);
+    Route::get('/user', [AuthController::class, 'showUser']);
 });
