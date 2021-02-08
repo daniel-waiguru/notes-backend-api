@@ -7,10 +7,7 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## Contributing
-
-If you find a missing feature or a bug, please feel free to open an issue or pull request
-
+Notie Server is a backend REST API build with laravel framework and PostgreSQL database deployed on heroku.
 BASE_URL = https://notieserver.herokuapp.com/
 
 ## Headers
@@ -81,3 +78,7 @@ Authorization: Bearer YOUR_ISSUED_TOKEN
 ```json
 DELETE https://notieserver.herokuapp.com/api/note/{id}
 Authorization: Bearer YOUR_ISSUED_TOKEN
+```
+## Contributing
+If you happen find a missing feature or a bug, please feel free to open an issue or pull request
+
