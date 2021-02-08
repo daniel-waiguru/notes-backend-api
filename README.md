@@ -23,6 +23,13 @@ BASE_URL = https://notieserver.herokuapp.com/
 https://notieserver.herokuapp.com/api/user/register
 
 To register a user submit a POST request with name, email and passoword to the above endpoint
+```json
+POST https://notieserver.herokuapp.com/api/user/register
+{
+    "name": "Your Name",
+    "email": "example@email.com",
+    "password": "your_preffered_password"
+}
 
 #### User login
 https://notieserver.herokuapp.com/api/user/login
