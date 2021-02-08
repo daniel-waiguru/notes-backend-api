@@ -7,7 +7,7 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-Notie Server is a backend REST API build with laravel framework and PostgreSQL database deployed on heroku.
+Notie Server is a backend REST API build with laravel framework and PostgreSQL database deployed on heroku. <br/>
 BASE_URL = https://notieserver.herokuapp.com/
 
 ## Headers
